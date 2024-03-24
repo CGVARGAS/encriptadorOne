@@ -1,56 +1,88 @@
 body {
     color: darkblue;
-    display: flexbox;
-    flex-direction: column;
 }
 
 .cabecalho {
-    padding: 2% 0% 0% 10%;
+    padding: 2% 0% 0% 40%;
 }
 
 .apresentacao {
-    display: flex; /* Define o conteúdo como um flex container */
-    flex-direction: column; /* Empilha os itens verticalmente */
-    
+    display: flex;
+    flex-direction: column;
 }
 
 .titulo {
     font-family: "Inter", sans-serif;
     font-size: 32px;
     color: darkblue;
-    margin-left: 28vh;
+    margin-left: 78vh;
+}
+
+.texto {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    color: darkblue;
+    margin-left: 93vh;
+    margin-top: 80px;
+}
+
+.texto__encript {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    color: darkblue;
+    margin-left: 55vh;
 }
 
 #campoTexto {
-    width: 100vh;
-    height: 100%;
-    margin: 5%;
-    border: none;
-    top: 200px; /* Ajuste conforme necessário */
-    right: 10px; /* Ajuste conforme necessário */
+    width: 70vh;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    font-family: "Inter", sans-serif;
+    font-size: larger;
+    margin-left: 60vh;
+    border-color: darkblue;
 }
-
 
 .button {
     display: flex;
     gap: 3%;
+    margin-left: 80vh;
 }
 
-#botao__encriptografar {
-    background-color: blue;
-    color: aliceblue;
-    width: 15vh;
-    height: 4vh;
-    margin-bottom: 1% 
-}
-
+#botao__encriptografar,
 #botao__desencriptografar {
-    background-color: blue;
+    background-color: darkblue;
     color: aliceblue;
     width: 15vh;
     height: 4vh;
-    margin-bottom: 1%
+    margin-bottom: 1%;
+    border: none;
 }
 
+#botao__encriptografar:hover {
+    background-color: green;
+    cursor: pointer;
+}
 
+#botao__desencriptografar:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+#textoEncriptografadoContainer {
+    margin-top: 20px;
+    margin-left: 30vh;
+}
+
+#textoEncriptografado {
+    width: 70vh;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    font-family: "Inter", sans-serif;
+    font-size: larger;
+    border-color: darkblue;
+    margin-left: 30vh;
+}
 

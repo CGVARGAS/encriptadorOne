@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decofidicador</title>
-    <link rel="stylesheet" href="style.css">
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decofidicador</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="cabecalho">
-        <img src="assets/alura.png" alt="Alura One T6">
-    </header>
-    <main>
-        <div class="apresentacao">
-            <h1 class="titulo">Software de Criptográfia</h1>
-            <input type="text" id="campoTexto" placeholder="Digite aqui">
-            <div class="button"> 
-                <button id="botao__encriptografar">Encriptografar</button> 
-                <button id="botao__desencriptografar">Desencriptografar</button>
-            </div> 
-        </div>
-    </main>
-    <script src="app.js"></script>
-    <footer></footer>
+  <header class="cabecalho">
+    <img src="assets/pc_dev.png" alt="Alura One T6" width="330">
+  </header>
+  <main>
+    <div class="apresentacao">
+      <h1 class="titulo">Encriptador de Textos</h1>
+      <div class="campo-texto">
+        <h2 class="texto">Texto:</h2>
+        <textarea id="campoTexto" rows="10" cols="50" placeholder="Digite aqui"></textarea>
+      </div>
+      <div class="button">
+        <button id="botao__encriptografar">Encriptografar</button>
+        <button id="botao__desencriptografar">Desencriptografar</button>
+      </div>
+    </div>
+    <div id="textoEncriptografadoContainer">
+      <h2 class="texto__encript">Texto Encriptografado:</h2>
+      <textarea id="textoEncriptografado" rows="10" cols="50" readonly></textarea>
+    </div>
+  </main>
+  <script src="app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+  <footer></footer>
 </body>
 </html>

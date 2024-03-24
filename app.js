@@ -1,67 +1,75 @@
-// app.js
-
+// Definindo a cifra de substituição
 const substitutionCipher = {
-    a: 'ai',
-    e: 'enter',
-    i: 'imes',
-    o: 'onto',
-    u: 'uter'
-  };
-  
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  
-  function encryptText(text) {
-    text = text.toLowerCase(); // Ensure case-insensitivity
-  
-    let encryptedText = '';
-    for (let char of text) {
-      if (alphabet.includes(char)) {
-        encryptedText += substitutionCipher[char] || char; // Use substitution if available, otherwise keep the character
-      } else {
-        encryptedText += char; // Preserve non-alphabetic characters
-      }
-    }
-    return encryptedText;
-  }
-  
-  function decryptText(text) {
-    const reversedCipher = Object.fromEntries(
-      Object.entries(substitutionCipher).map(([key, value]) => [value, key])
-    );
-  
-    let decryptedText = '';
-    for (let char of text) {
-      if (Object.keys(reversedCipher).includes(char)) {
-        decryptedText += reversedCipher[char] || char; // Use reverse substitution if available, otherwise keep the character
-      } else {
-        decryptedText += char; // Preserve non-alphabetic characters
-      }
-    }
-    return decryptedText;
-  }
-  
-  const buttonEncript = document.getElementById('botao__encriptografar');
-  const buttonDencript = document.getElementById('botao__desencriptografar');
-  const inputText = document.getElementById('campoTexto');
+  a: 'ai',
+  e: 'enter',
+  i: 'imes',
+  o: 'onto',
+  u: 'uter'
+};
 
-  // Adiciona a função auto-size ao campo de texto
-  autosize(inputText);
-
-  // Função auto-size (necessita de uma biblioteca externa)
-  function autosize(textarea) {
-    textarea.style.height = 'auto';
-    textarea.style.height = textarea.scrollHeight + 'px';
+// Função para criptografar o texto
+function encryptText(text) {
+  let encryptedText = '';
+  // Percorre cada caractere do texto
+  for (let char of text) {
+      // Verifica se o caractere está na tabela de substituição
+      // Se estiver, substitui pelo valor correspondente na cifra
+      // Caso contrário, mantém o caractere original
+      encryptedText += substitutionCipher[char] || char;
   }
-  
-  buttonEncript.addEventListener('click', () => {
-    const textToEncrypt = inputText.value;
-    const encryptedText = encryptText(textToEncrypt);
-    inputText.value = encryptedText;
-  });
-  
-  buttonDencript.addEventListener('click', () => {
-    const textToDecrypt = inputText.value;
-    const decryptedText = decryptText(textToDecrypt);
-    inputText.value = decryptedText;
-  });
-  
+  return encryptedText; // Retorna o texto criptografado
+}
+
+// Função para descriptografar o texto
+function decryptText(text) {
+  let decryptedText = '';
+  let i = 0;
+  // Percorre o texto de entrada
+  while (i < text.length) {
+      let found = false;
+      // Percorre cada entrada na tabela de substituição
+      for (let key in substitutionCipher) {
+          // Verifica se a substring atual corresponde a uma entrada na cifra
+          if (text.startsWith(substitutionCipher[key], i)) {
+              // Se encontrar uma correspondência, substitui pela chave correspondente
+              decryptedText += key;
+              // Avança o índice para a próxima substring
+              i += substitutionCipher[key].length;
+              found = true;
+              break; // Sai do loop interno
+          }
+      }
+      // Se não encontrar uma correspondência, mantém o caractere original
+      if (!found) {
+          decryptedText += text[i];
+          i++;
+      }
+  }
+  return decryptedText; // Retorna o texto descriptografado
+}
+
+// Seleciona os elementos do HTML
+const buttonEncrypt = document.getElementById('botao__encriptografar');
+const buttonDecrypt = document.getElementById('botao__desencriptografar');
+const inputText = document.getElementById('campoTexto');
+const outputText = document.getElementById('textoEncriptografado');
+const headerTitle = document.querySelector('#textoEncriptografadoContainer h2');
+
+// Adiciona um ouvinte de evento para o botão de criptografar
+buttonEncrypt.addEventListener('click', () => {
+  // Obtém o texto do campo de entrada
+  const textToEncrypt = inputText.value;
+  // Criptografa o texto e atualiza o valor do campo de saída com o texto criptografado
+  outputText.value = encryptText(textToEncrypt);
+});
+
+// Adiciona um ouvinte de evento para o botão de descriptografar
+buttonDecrypt.addEventListener('click', () => {
+  // Obtém o texto do campo de saída
+  const textToDecrypt = outputText.value;
+  // Descriptografa o texto e atualiza o valor do campo de entrada com o texto descriptografado
+  outputText.value = decryptText(textToDecrypt);
+  // Altera o texto dentro da tag <h2> para "Texto Desencriptografado"
+  headerTitle.textContent = "Texto Desencriptografado";
+});
+
