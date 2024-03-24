@@ -1,5 +1,6 @@
 body {
     color: darkblue;
+    background-color: rgb(195, 218, 255);
 }
 
 .cabecalho {
@@ -41,7 +42,7 @@ body {
     font-family: "Inter", sans-serif;
     font-size: larger;
     margin-left: 60vh;
-    border-color: darkblue;
+    border: none;
 }
 
 .button {
@@ -82,7 +83,32 @@ body {
     padding: 10px;
     font-family: "Inter", sans-serif;
     font-size: larger;
-    border-color: darkblue;
+    border: none;
     margin-left: 30vh;
 }
+
+.subtitulo {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    color: darkorange;
+    margin-left: 80vh;
+    margin-top: 4%;
+    position: relative; /* Adiciona uma posição relativa */
+    z-index: 1; /* Define a ordem de camada */
+}
+
+footer {
+    padding-bottom: 1vh;
+    background-color: darkblue;
+    margin-top: 5%;
+}
+
+.rodape{
+    margin-left: 47%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    color: darkorange;
+}
+
+
 
