@@ -1,0 +1,56 @@
+body {
+    color: darkblue;
+    display: flexbox;
+    flex-direction: column;
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 10%;
+}
+
+.apresentacao {
+    display: flex; /* Define o conteúdo como um flex container */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    
+}
+
+.titulo {
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    color: darkblue;
+    margin-left: 28vh;
+}
+
+#campoTexto {
+    width: 100vh;
+    height: 100%;
+    margin: 5%;
+    border: none;
+    top: 200px; /* Ajuste conforme necessário */
+    right: 10px; /* Ajuste conforme necessário */
+}
+
+
+.button {
+    display: flex;
+    gap: 3%;
+}
+
+#botao__encriptografar {
+    background-color: blue;
+    color: aliceblue;
+    width: 15vh;
+    height: 4vh;
+    margin-bottom: 1% 
+}
+
+#botao__desencriptografar {
+    background-color: blue;
+    color: aliceblue;
+    width: 15vh;
+    height: 4vh;
+    margin-bottom: 1%
+}
+
+
+
