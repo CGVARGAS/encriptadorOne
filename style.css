@@ -3,7 +3,7 @@ body {
 }
 
 .cabecalho {
-    padding: 2% 0% 0% 40%;
+    padding: 2% 0% 0% 15%;
 }
 
 .apresentacao {
@@ -71,7 +71,7 @@ body {
 }
 
 #textoEncriptografadoContainer {
-    margin-top: 20px;
+    margin-top: 10vh;
     margin-left: 30vh;
 }
 
