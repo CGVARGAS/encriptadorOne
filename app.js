@@ -61,6 +61,8 @@ buttonEncrypt.addEventListener('click', () => {
   const textToEncrypt = inputText.value;
   // Criptografa o texto e atualiza o valor do campo de saída com o texto criptografado
   outputText.value = encryptText(textToEncrypt);
+  headerTitle.textContent = "Texto Encriptografado";
+
 });
 
 // Adiciona um ouvinte de evento para o botão de descriptografar
@@ -71,5 +73,6 @@ buttonDecrypt.addEventListener('click', () => {
   outputText.value = decryptText(textToDecrypt);
   // Altera o texto dentro da tag <h2> para "Texto Desencriptografado"
   headerTitle.textContent = "Texto Desencriptografado";
+  inputText.value = " ";
 });
 
