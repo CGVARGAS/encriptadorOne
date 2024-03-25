@@ -4,7 +4,7 @@ body {
 }
 
 .cabecalho {
-    padding: 2% 0% 0% 15%;
+    padding: 2vh 0vh 0vh 77vh;
 }
 
 .apresentacao {
@@ -35,19 +35,19 @@ body {
 }
 
 #campoTexto {
-    width: 70vh;
-    height: 200px;
-    margin: 10px;
-    padding: 10px;
+    width: 64vh;
+    height: 20vh;
+    margin: 5vh;
+    padding: 4vh;
     font-family: "Inter", sans-serif;
     font-size: larger;
-    margin-left: 60vh;
     border: none;
+    margin-left: 60vh;
 }
 
 .button {
     display: flex;
-    gap: 3%;
+    gap: 5vh;
     margin-left: 80vh;
 }
 
@@ -77,10 +77,10 @@ body {
 }
 
 #textoEncriptografado {
-    width: 70vh;
-    height: 200px;
-    margin: 10px;
-    padding: 10px;
+    width: 64vh;
+    height: 20vh;
+    margin: 5vh;
+    padding: 4vh;
     font-family: "Inter", sans-serif;
     font-size: larger;
     border: none;
@@ -92,7 +92,7 @@ body {
     font-size: 15px;
     color: darkorange;
     margin-left: 80vh;
-    margin-top: 4%;
+    margin-top: 4vh;
     position: relative; /* Adiciona uma posição relativa */
     z-index: 1; /* Define a ordem de camada */
 }
@@ -100,11 +100,11 @@ body {
 footer {
     padding-bottom: 1vh;
     background-color: darkblue;
-    margin-top: 5%;
+    margin-top: 8vh;
 }
 
 .rodape{
-    margin-left: 47%;
+    margin-left: 90vh;
     font-family: 'Courier New', Courier, monospace;
     font-size: large;
     color: darkorange;
